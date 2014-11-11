@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="November"
         android:id="@+id/textView4"
         android:layout_below="@+id/hours"
         android:layout_alignEnd="@+id/colon"
