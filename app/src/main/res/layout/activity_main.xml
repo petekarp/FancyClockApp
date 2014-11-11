@@ -9,18 +9,11 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="12"
         android:id="@+id/hours"
-        android:layout_below="@+id/textView2"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="56dp"
@@ -63,7 +56,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="November"
-        android:id="@+id/textView4"
+        android:id="@+id/month"
         android:layout_below="@+id/hours"
         android:layout_alignEnd="@+id/colon"
         android:layout_marginTop="24dp" />
@@ -73,18 +66,38 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Day"
-        android:id="@+id/textView5"
-        android:layout_alignTop="@+id/textView4"
+        android:id="@+id/day"
+        android:layout_alignTop="@+id/month"
         android:layout_alignStart="@+id/minutes" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView6"
-        android:layout_alignTop="@+id/textView5"
-        android:layout_toEndOf="@+id/textView5"
+        android:text="2014"
+        android:id="@+id/year"
+        android:layout_alignTop="@+id/day"
+        android:layout_toEndOf="@+id/day"
         android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/time_view"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="119dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/date_view"
+        android:layout_alignTop="@+id/time_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" />
 
 </RelativeLayout>
