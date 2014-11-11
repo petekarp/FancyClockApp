@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 
 
@@ -17,15 +18,42 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String time, date;
-        Calendar cal = Calendar.getInstance();
-        cal.getTime();
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm a");
-        time = timeFormat.format(cal.getTime());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
-        date =  timeFormat.format(cal.getTime());
-        TextView timeView = (TextView) findViewById(R.id.time_view);
-        TextView dateView = (TextView) findViewById(R.id.date_view);
+
+
+
+
+        Thread t = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                String time, date;
+                                Calendar cal = Calendar.getInstance();
+                                Date c = cal.getTime();
+                                SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss a");
+                                time = timeFormat.format(c);
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
+                                date = dateFormat.format(c);
+                                TextView timeView = (TextView) findViewById(R.id.time_view);
+                                TextView dateView = (TextView) findViewById(R.id.date_view);
+                                timeView.setText(time);
+                                dateView.setText(date);
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+
+        t.start();
+
+
 
     }
 
