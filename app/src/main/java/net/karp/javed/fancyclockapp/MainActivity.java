@@ -4,6 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 
 public class MainActivity extends Activity {
@@ -12,6 +17,16 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String time, date;
+        Calendar cal = Calendar.getInstance();
+        cal.getTime();
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm a");
+        time = timeFormat.format(cal.getTime());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
+        date =  timeFormat.format(cal.getTime());
+        TextView timeView = (TextView) findViewById(R.id.time_view);
+        TextView dateView = (TextView) findViewById(R.id.date_view);
+
     }
 
 

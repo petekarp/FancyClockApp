@@ -80,4 +80,24 @@
         android:layout_toEndOf="@+id/day"
         android:layout_marginLeft="30dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/time_view"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="119dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/date_view"
+        android:layout_alignTop="@+id/time_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" />
+
 </RelativeLayout>
