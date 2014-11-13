@@ -4,5 +4,11 @@
     <string name="app_name">FancyClockApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_simple_clock_settings">Simple Clock Settings</string>
+    <string name="title_simple_clock">Simple Clock</string>
+    <string name="blue">Blue</string>
+    <string name="black">Black</string>
+    <string name="green">Green</string>
+    <string name="red">Red</string>
 
 </resources>
