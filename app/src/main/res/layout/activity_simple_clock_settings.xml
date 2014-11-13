@@ -40,7 +40,6 @@
                 android:id="@+id/militaryTimeSwitch"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:onClick="onToggleClicked"
                 android:checked="false"
                 android:layout_gravity="right" />
         </LinearLayout>
