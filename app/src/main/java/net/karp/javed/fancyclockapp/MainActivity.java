@@ -19,42 +19,37 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
+        // Updates Simple Clock every second
         Thread t = new Thread() {
 
             @Override
             public void run() {
-                try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(1000);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                String time, date;
-                                Calendar cal = Calendar.getInstance();
-                                Date c = cal.getTime();
-                                SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss a");
-                                time = timeFormat.format(c);
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
-                                date = dateFormat.format(c);
-                                TextView timeView = (TextView) findViewById(R.id.time_view);
-                                TextView dateView = (TextView) findViewById(R.id.date_view);
-                                timeView.setText(time);
-                                dateView.setText(date);
-                            }
-                        });
-                    }
-                } catch (InterruptedException e) {
+            try {
+                while (!isInterrupted()) {
+                    Thread.sleep(1000);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                        String time, date;
+                        Calendar cal = Calendar.getInstance();
+                        Date c = cal.getTime();
+                        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss a");
+                        time = timeFormat.format(c);
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
+                        date = dateFormat.format(c);
+                        TextView timeView = (TextView) findViewById(R.id.time_view);
+                        TextView dateView = (TextView) findViewById(R.id.date_view);
+                        timeView.setText(time);
+                        dateView.setText(date);
+                        }
+                    });
                 }
+            } catch (InterruptedException e) {
+            }
             }
         };
 
         t.start();
-
-
-
     }
 
 
