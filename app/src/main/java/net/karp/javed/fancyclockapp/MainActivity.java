@@ -25,6 +25,9 @@ public class MainActivity extends Activity {
             CLOCK_COLOR = "clock_color",
             CLOCK_SIZE = "clock_size";
 
+    String timeString, dateString;
+
+
     SharedPreferences prefs;
 
     @Override
@@ -36,7 +39,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         updateStuff();
-
+        updateClock();
     }
 
     @Override
@@ -46,28 +49,27 @@ public class MainActivity extends Activity {
         updateStuff();
     }
 
-
-    // TODO fix party mode! :D
     public void updateStuff(){
         militaryTime = prefs.getBoolean(MILITARY_TIME, false);
         clockColor = prefs.getString(CLOCK_COLOR, getResources().getStringArray(R.array.colors_array)[0]);
         clockSize = prefs.getString(CLOCK_SIZE, getResources().getStringArray(R.array.size_array)[0]);
 
-        String time;
         if(militaryTime)
         {
-            time = "HH:mm:ss";
+            timeString = "HH:mm:ss";
         }
         else
         {
-            time = "hh:mm:ss a";
+            timeString = "hh:mm:ss a";
         }
-        String date = "MMMM dd, yyyy";
+        dateString = "MMMM dd, yyyy";
 
-        updateClock(time, date);
+        //updateClock(time, date);
+        //updateClock();
     }
 
-    public void updateClock(final String timeString, final String dateString){
+    //public void updateClock(final String timeString, final String dateString){
+    public void updateClock(){
         // Updates Simple Clock every second
         Thread t = new Thread() {
 
