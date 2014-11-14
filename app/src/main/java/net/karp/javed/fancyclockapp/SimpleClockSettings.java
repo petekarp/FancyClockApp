@@ -2,18 +2,14 @@ package net.karp.javed.fancyclockapp;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
-import android.widget.Toast;
 
 
 public class SimpleClockSettings extends Activity {
@@ -53,14 +49,11 @@ public class SimpleClockSettings extends Activity {
             }
         });
 
-
-
         // Settings for Clock Color
         final Spinner clockColorSpinner = (Spinner) findViewById(R.id.clockColorSpinner);
         // Populating dropdown
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.colors_array, R.layout.spinner_layout);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         clockColorSpinner.setAdapter(adapter);
         // Restore settings (if any)
         int pos = adapter.getPosition(prefs.getString(CLOCK_COLOR, getResources().getStringArray(R.array.colors_array)[0]));
@@ -85,7 +78,6 @@ public class SimpleClockSettings extends Activity {
         // Populating dropdown
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
                 R.array.size_array, R.layout.spinner_layout);
-        //adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         clockSizeSpinner.setAdapter(adapter2);
         // Restore settings (if any)
         int pos2 = adapter2.getPosition(prefs.getString(CLOCK_SIZE, getResources().getStringArray(R.array.size_array)[0]));
@@ -115,6 +107,4 @@ public class SimpleClockSettings extends Activity {
         b.putString(CLOCK_SIZE, clockSize);
 
     }
-
-
 }
