@@ -17,8 +17,15 @@
             </intent-filter>
         </activity>
         <activity
+
             android:name=".FancyClockActivity"
             android:label="@string/title_activity_fancy_clock" >
+        </activity>
+
+        <activity
+
+            android:name=".SimpleClockSettings"
+            android:label="@string/title_activity_simple_clock_settings" >
         </activity>
     </application>
 

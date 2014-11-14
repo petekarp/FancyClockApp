@@ -1,6 +1,8 @@
 package net.karp.javed.fancyclockapp;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +20,10 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        setTitle(R.string.title_simple_clock);
+        final SharedPreferences prefs = getPreferences(MODE_PRIVATE);
         setContentView(R.layout.activity_main);
         updateClock("hh:mm:ss a", "MMMM dd, yyyy");
 
@@ -73,6 +78,8 @@ public class MainActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(MainActivity.this, SimpleClockSettings.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
