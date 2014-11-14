@@ -59,7 +59,7 @@ public class SimpleClockSettings extends Activity {
         final Spinner clockColorSpinner = (Spinner) findViewById(R.id.clockColorSpinner);
         // Populating dropdown
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.colors_array, android.R.layout.simple_spinner_item);
+                R.array.colors_array, R.layout.spinner_layout);
         //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         clockColorSpinner.setAdapter(adapter);
         // Restore settings (if any)
@@ -84,7 +84,7 @@ public class SimpleClockSettings extends Activity {
         final Spinner clockSizeSpinner = (Spinner) findViewById(R.id.clockSizeSpinner);
         // Populating dropdown
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
-                R.array.size_array, android.R.layout.simple_spinner_item);
+                R.array.size_array, R.layout.spinner_layout);
         //adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         clockSizeSpinner.setAdapter(adapter2);
         // Restore settings (if any)

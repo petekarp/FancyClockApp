@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="24 hours"
+                android:text="24 Hours "
                 android:id="@+id/militaryTimeTextView"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true" />
@@ -44,6 +44,12 @@
                 android:layout_gravity="right" />
         </LinearLayout>
 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"/>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -57,7 +63,7 @@
                 android:id="@+id/clockColorTextView"
                 android:layout_below="@+id/militaryTimeSwitch"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="45dp" />
+                android:layout_marginTop="10dp" />
 
             <View
                 android:layout_width="0dp"
@@ -71,8 +77,15 @@
                 android:id="@+id/clockColorSpinner"
                 android:layout_alignTop="@+id/clockColorTextView"
                 android:layout_alignParentEnd="true"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -85,7 +98,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Clock Size"
                 android:id="@+id/clockSizeTextView"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="10dp"
                 android:layout_below="@+id/clockColorSpinner"
                 android:layout_alignParentStart="true" />
 
@@ -101,8 +114,15 @@
                 android:id="@+id/clockSizeSpinner"
                 android:layout_alignTop="@+id/clockSizeTextView"
                 android:layout_alignStart="@+id/clockColorSpinner"
-                android:spinnerMode="dropdown"/>
+                android:spinnerMode="dropdown"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"/>
 
     </LinearLayout>
 
