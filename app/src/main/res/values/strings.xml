@@ -4,5 +4,13 @@
     <string name="app_name">FancyClockApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_fancy_clock">FancyClockActivity</string>
+    <string name="hour_units">1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n8\n\n9\n\n10\n\n11\n\n12</string>
+    <string name="minute_units">0\n\n5\n\n10\n\n15\n\n20\n\n25\n\n30\n\n35\n\n40\n\n45\n\n50\n\n55</string>
+    <string name="second_units">0\n\n5\n\n10\n\n15\n\n20\n\n25\n\n30\n\n35\n\n40\n\n45\n\n50\n\n55</string>
+    <string name="hr_label">HOUR</string>
+    <string name="min_label">MINUTES</string>
+    <string name="sec_label">SECONDS</string>
+
 
 </resources>
