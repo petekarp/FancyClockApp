@@ -15,10 +15,6 @@
 
     <string name="title_activity_simple_clock_settings">Simple Clock Settings</string>
     <string name="title_simple_clock">Simple Clock</string>
-    <string name="blue">Blue</string>
-    <string name="black">Black</string>
-    <string name="green">Green</string>
-    <string name="red">Red</string>
 
     <string-array name="colors_array">
         <item>Black</item>
@@ -26,6 +22,10 @@
         <item>Green</item>
         <item>Red</item>
     </string-array>
+    <string name="black">Black</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="red">Red</string>
 
     <string-array name="size_array">
         <item>Small</item>
@@ -33,5 +33,9 @@
         <item>Large</item>
         <item>Extra Large</item>
     </string-array>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="extra_large">Extra Large</string>
 
 </resources>

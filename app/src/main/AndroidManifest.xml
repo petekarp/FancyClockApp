@@ -25,7 +25,8 @@
         <activity
 
             android:name=".SimpleClockSettings"
-            android:label="@string/title_activity_simple_clock_settings" >
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_simple_clock_settings">
         </activity>
     </application>
 
