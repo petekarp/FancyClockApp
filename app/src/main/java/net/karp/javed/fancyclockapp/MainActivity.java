@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -17,16 +18,53 @@ import java.util.Date;
 public class MainActivity extends Activity {
 
     SimpleDateFormat timeFormat, dateFormat;
+    boolean militaryTime;
+    String clockColor, clockSize;
+
+    final String MILITARY_TIME = "military_time",
+            CLOCK_COLOR = "clock_color",
+            CLOCK_SIZE = "clock_size";
+
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setTitle(R.string.title_simple_clock);
-        final SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         setContentView(R.layout.activity_main);
-        updateClock("hh:mm:ss a", "MMMM dd, yyyy");
 
+        updateStuff();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        updateStuff();
+    }
+
+
+    // TODO fix party mode! :D
+    public void updateStuff(){
+        militaryTime = prefs.getBoolean(MILITARY_TIME, false);
+        clockColor = prefs.getString(CLOCK_COLOR, getResources().getStringArray(R.array.colors_array)[0]);
+        clockSize = prefs.getString(CLOCK_SIZE, getResources().getStringArray(R.array.size_array)[0]);
+
+        String time;
+        if(militaryTime)
+        {
+            time = "HH:mm:ss";
+        }
+        else
+        {
+            time = "hh:mm:ss a";
+        }
+        String date = "MMMM dd, yyyy";
+
+        updateClock(time, date);
     }
 
     public void updateClock(final String timeString, final String dateString){
