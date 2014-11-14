@@ -105,6 +105,8 @@ public class SimpleClockSettings extends Activity {
             }
         });
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     protected void onSaveInstanceStat(Bundle b){
@@ -113,5 +115,6 @@ public class SimpleClockSettings extends Activity {
         b.putString(CLOCK_SIZE, clockSize);
 
     }
+
 
 }
